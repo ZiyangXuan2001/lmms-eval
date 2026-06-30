@@ -97,3 +97,7 @@ run_xmod_bench_qwen2_5_omni.slurm
 run_xmod_full_generic.slurm
 run_xmod_lite_generic.slurm
 upload_eval_logs.sh
+
+# Smoke-test fixtures are intentionally small and shareable.
+!smoke_data/
+!smoke_data/**
