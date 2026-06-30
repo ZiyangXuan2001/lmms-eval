@@ -1,0 +1,123 @@
+{
+  "task": "B3_prerequisite_satisfaction",
+  "dataset": "Cholec80",
+  "source_a1_manifest": "smoke_data/cholec80/data/A1/manifest.jsonl",
+  "num_samples": 1,
+  "question_type_counts": {
+    "prerequisite_satisfaction_verification": 544
+  },
+  "label_counts_by_question_type": {
+    "prerequisite_satisfaction_verification": {
+      "not_satisfied": 277,
+      "satisfied": 267
+    }
+  },
+  "relation_counts_by_question_type": {
+    "prerequisite_satisfaction_verification": {
+      "CalotTriangleDissection -> CalotTriangleDissection": 24,
+      "CalotTriangleDissection -> CleaningCoagulation": 13,
+      "CalotTriangleDissection -> ClippingCutting": 12,
+      "CalotTriangleDissection -> GallbladderDissection": 9,
+      "CalotTriangleDissection -> GallbladderPackaging": 13,
+      "CalotTriangleDissection -> GallbladderRetraction": 21,
+      "CalotTriangleDissection -> Preparation": 8,
+      "CleaningCoagulation -> CalotTriangleDissection": 5,
+      "CleaningCoagulation -> CleaningCoagulation": 10,
+      "CleaningCoagulation -> ClippingCutting": 16,
+      "CleaningCoagulation -> GallbladderDissection": 12,
+      "CleaningCoagulation -> GallbladderPackaging": 16,
+      "CleaningCoagulation -> GallbladderRetraction": 12,
+      "CleaningCoagulation -> Preparation": 12,
+      "ClippingCutting -> CalotTriangleDissection": 11,
+      "ClippingCutting -> CleaningCoagulation": 13,
+      "ClippingCutting -> ClippingCutting": 15,
+      "ClippingCutting -> GallbladderDissection": 12,
+      "ClippingCutting -> GallbladderPackaging": 17,
+      "ClippingCutting -> GallbladderRetraction": 13,
+      "ClippingCutting -> Preparation": 10,
+      "GallbladderDissection -> CalotTriangleDissection": 13,
+      "GallbladderDissection -> CleaningCoagulation": 14,
+      "GallbladderDissection -> ClippingCutting": 19,
+      "GallbladderDissection -> GallbladderDissection": 14,
+      "GallbladderDissection -> GallbladderPackaging": 9,
+      "GallbladderDissection -> GallbladderRetraction": 14,
+      "GallbladderDissection -> Preparation": 16,
+      "GallbladderPackaging -> CalotTriangleDissection": 14,
+      "GallbladderPackaging -> CleaningCoagulation": 15,
+      "GallbladderPackaging -> ClippingCutting": 9,
+      "GallbladderPackaging -> GallbladderDissection": 16,
+      "GallbladderPackaging -> GallbladderPackaging": 12,
+      "GallbladderPackaging -> GallbladderRetraction": 9,
+      "GallbladderPackaging -> Preparation": 13,
+      "Preparation -> CalotTriangleDissection": 13,
+      "Preparation -> CleaningCoagulation": 9,
+      "Preparation -> ClippingCutting": 9,
+      "Preparation -> GallbladderDissection": 17,
+      "Preparation -> GallbladderPackaging": 13,
+      "Preparation -> GallbladderRetraction": 10,
+      "Preparation -> Preparation": 12
+    }
+  },
+  "current_phase_counts": {
+    "CalotTriangleDissection": 80,
+    "CleaningCoagulation": 74,
+    "ClippingCutting": 80,
+    "GallbladderDissection": 80,
+    "GallbladderPackaging": 80,
+    "GallbladderRetraction": 79,
+    "Preparation": 71
+  },
+  "question_types": [
+    "prerequisite_satisfaction_verification"
+  ],
+  "max_current_clips": 0,
+  "queried_prerequisite_phases": [
+    "Preparation",
+    "CalotTriangleDissection",
+    "ClippingCutting",
+    "GallbladderDissection",
+    "GallbladderPackaging",
+    "CleaningCoagulation"
+  ],
+  "queried_prerequisite_sampling": "one random queried prerequisite phase per current clip",
+  "seed": 53,
+  "answer_rule": "Yes iff the queried prerequisite phase appears before the current phase in phase_order.",
+  "question_template": "[Task]\nYou are solving a surgical video procedure understanding task.\n\nIn this task, you must {task_background_and_goal_description}\n\nReference surgical phase order with brief meanings:\n1. Preparation - establish access and initial exposure.\n2. Calot triangle dissection - dissect Calot's triangle to expose the cystic duct and cystic artery.\n3. Clipping and cutting - clip and divide the cystic duct and/or cystic artery structures.\n4. Gallbladder dissection - detach the gallbladder from the liver bed.\n5. Gallbladder packaging - place the detached gallbladder specimen into a retrieval bag.\n6. Cleaning/coagulation - irrigate, aspirate, clean the operative field, and/or control bleeding.\n7. Gallbladder retraction - final retraction or removal of the packaged gallbladder.\n\nYou will receive one or more clips. Frames inside each clip are chronological. Use the temporal progression across frames to identify the procedural step.\n\nThe visual evidence for this question is provided below.\n{images}\n\n[Rules]\n1. Use only the images and text provided in this prompt.\n2. If answer options are provided, choose only from the provided options.\n3. Do not output explanation beyond the required final answer.\n\n[Question]\n{full_question_text}\n\n[Answer Format]\nOutput exactly one JSON object: {\"answer_label\":\"{ans}\"} and nothing else.\nReplace {ans} with the single legal answer for this task, chosen from {legal_answer_space_description}.",
+  "images_placeholder": "{images}",
+  "task_background_and_goal": "judge whether a queried procedural milestone should already have been completed before the current phase shown in the surgical video clip.",
+  "prerequisite_question_template": "At the current point in the procedure, should {prerequisite} have already been completed as a prerequisite for the current phase?",
+  "yes_no_choices": [
+    {
+      "label": "A",
+      "text": "Yes"
+    },
+    {
+      "label": "B",
+      "text": "No"
+    }
+  ],
+  "phase_order": [
+    "Preparation",
+    "CalotTriangleDissection",
+    "ClippingCutting",
+    "GallbladderDissection",
+    "GallbladderPackaging",
+    "CleaningCoagulation",
+    "GallbladderRetraction"
+  ],
+  "phase_display": {
+    "Preparation": "Preparation",
+    "CalotTriangleDissection": "Calot triangle dissection",
+    "ClippingCutting": "Clipping and cutting",
+    "GallbladderDissection": "Gallbladder dissection",
+    "GallbladderPackaging": "Gallbladder packaging",
+    "CleaningCoagulation": "Cleaning/coagulation",
+    "GallbladderRetraction": "Gallbladder retraction"
+  },
+  "smoke_data": true,
+  "smoke_source_dataset": "Cholec80",
+  "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/B3/manifest.jsonl",
+  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 544,
+  "smoke_original_source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl"
+}

@@ -1,0 +1,119 @@
+{
+  "task": "C1_procedure_state_tracking",
+  "dataset": "Cholec80",
+  "source_phase_annotations": "smoke_data/cholec80/phase_annotations",
+  "source_tool_annotations": "smoke_data/cholec80/tool_annotations",
+  "num_samples": 1,
+  "num_clips": 1088,
+  "num_clip_pairs": 999,
+  "question_type_counts": {
+    "transition_type_classification": 999
+  },
+  "label_counts_by_question_type": {
+    "transition_type_classification": {
+      "no_change": 152,
+      "phase_and_tool_change": 397,
+      "phase_change": 67,
+      "tool_change": 383
+    }
+  },
+  "phase_transition_counts_by_question_type": {
+    "transition_type_classification": {
+      "CalotTriangleDissection -> CalotTriangleDissection": 80,
+      "CalotTriangleDissection -> ClippingCutting": 80,
+      "CleaningCoagulation -> CleaningCoagulation": 73,
+      "CleaningCoagulation -> GallbladderPackaging": 12,
+      "CleaningCoagulation -> GallbladderRetraction": 58,
+      "ClippingCutting -> ClippingCutting": 80,
+      "ClippingCutting -> GallbladderDissection": 80,
+      "GallbladderDissection -> CleaningCoagulation": 12,
+      "GallbladderDissection -> GallbladderDissection": 80,
+      "GallbladderDissection -> GallbladderPackaging": 68,
+      "GallbladderPackaging -> CleaningCoagulation": 59,
+      "GallbladderPackaging -> GallbladderPackaging": 80,
+      "GallbladderPackaging -> GallbladderRetraction": 21,
+      "GallbladderRetraction -> CleaningCoagulation": 3,
+      "GallbladderRetraction -> GallbladderRetraction": 74,
+      "Preparation -> CalotTriangleDissection": 71,
+      "Preparation -> Preparation": 68
+    }
+  },
+  "transition_type_counts": {
+    "no_change": 152,
+    "phase_and_tool_change": 397,
+    "phase_change": 67,
+    "tool_change": 383
+  },
+  "clip_phase_counts": {
+    "CalotTriangleDissection": 160,
+    "CleaningCoagulation": 148,
+    "ClippingCutting": 160,
+    "GallbladderDissection": 160,
+    "GallbladderPackaging": 160,
+    "GallbladderRetraction": 158,
+    "Preparation": 142
+  },
+  "clip_active_tool_counts": {
+    "Bipolar": 48,
+    "Clipper": 81,
+    "Grasper": 796,
+    "Hook": 210,
+    "Irrigator": 64,
+    "Scissors": 67,
+    "SpecimenBag": 268
+  },
+  "question_types": [
+    "transition_type_classification"
+  ],
+  "state_dimensions": [
+    "phase",
+    "tool_presence"
+  ],
+  "tool_names": [
+    "Grasper",
+    "Bipolar",
+    "Hook",
+    "Scissors",
+    "Clipper",
+    "Irrigator",
+    "SpecimenBag"
+  ],
+  "frames_per_clip": 8,
+  "clips_per_phase_per_video": 2,
+  "max_pairs_per_video": 0,
+  "question_template": "[Task]\nYou are solving a surgical video procedure understanding task.\n\nIn this task, you must {task_background_and_goal_description}\n\nReference surgical phase order with brief meanings:\n1. Preparation - establish access and initial exposure.\n2. Calot triangle dissection - dissect Calot's triangle to expose the cystic duct and cystic artery.\n3. Clipping and cutting - clip and divide the cystic duct and/or cystic artery structures.\n4. Gallbladder dissection - detach the gallbladder from the liver bed.\n5. Gallbladder packaging - place the detached gallbladder specimen into a retrieval bag.\n6. Cleaning/coagulation - irrigate, aspirate, clean the operative field, and/or control bleeding.\n7. Gallbladder retraction - final retraction or removal of the packaged gallbladder.\n\nYou will receive one or more clips. Frames inside each clip are chronological. Use the temporal progression across frames to identify the procedural step.\n\nThe visual evidence for this question is provided below.\n{images}\n\n[Rules]\n1. Use only the images and text provided in this prompt.\n2. If answer options are provided, choose only from the provided options.\n3. Do not output explanation beyond the required final answer.\n\n[Question]\n{full_question_text}\n\n[Answer Format]\nOutput exactly one JSON object: {\"answer_label\":\"{ans}\"} and nothing else.\nReplace {ans} with the single legal answer for this task, chosen from {legal_answer_space_description}.",
+  "images_placeholder": "{images}",
+  "task_background_and_goal": "track procedural phase and visible tool-presence state changes across surgical video clips.",
+  "transition_type_question": "What type of tracked state transition occurs between these two clips?",
+  "transition_type_display": {
+    "phase_change": "Only the procedural phase changed",
+    "tool_change": "Only tracked tool presence changed",
+    "phase_and_tool_change": "Both the procedural phase and tracked tool presence changed",
+    "no_change": "No tracked phase/tool state changed"
+  },
+  "phase_order": [
+    "Preparation",
+    "CalotTriangleDissection",
+    "ClippingCutting",
+    "GallbladderDissection",
+    "GallbladderPackaging",
+    "CleaningCoagulation",
+    "GallbladderRetraction"
+  ],
+  "phase_display": {
+    "Preparation": "Preparation",
+    "CalotTriangleDissection": "Calot triangle dissection",
+    "ClippingCutting": "Clipping and cutting",
+    "GallbladderDissection": "Gallbladder dissection",
+    "GallbladderPackaging": "Gallbladder packaging",
+    "CleaningCoagulation": "Cleaning/coagulation",
+    "GallbladderRetraction": "Gallbladder retraction"
+  },
+  "smoke_data": true,
+  "smoke_source_dataset": "Cholec80",
+  "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/C1/manifest.jsonl",
+  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 999,
+  "smoke_original_source_phase_annotations": "/data/shared/benchmark/cholec80/cholec80/phase_annotations",
+  "smoke_original_source_tool_annotations": "/data/shared/benchmark/cholec80/cholec80/tool_annotations"
+}

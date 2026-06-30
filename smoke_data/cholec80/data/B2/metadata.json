@@ -1,0 +1,67 @@
+{
+  "task": "B2_missing_milestone_diagnosis",
+  "dataset": "Cholec80",
+  "source_a1_manifest": "smoke_data/cholec80/data/A1/manifest.jsonl",
+  "num_samples": 1,
+  "question_type_counts": {
+    "missing_milestone_identification": 378
+  },
+  "label_counts_by_question_type": {
+    "missing_milestone_identification": {
+      "Calot triangle dissection": 71,
+      "Cleaning/coagulation": 73,
+      "Clipping and cutting": 80,
+      "Gallbladder dissection": 80,
+      "Gallbladder packaging": 74
+    }
+  },
+  "milestone_counts_by_question_type": {
+    "missing_milestone_identification": {
+      "CalotTriangleDissection": 71,
+      "CleaningCoagulation": 73,
+      "ClippingCutting": 80,
+      "GallbladderDissection": 80,
+      "GallbladderPackaging": 74
+    }
+  },
+  "context_transition_counts": {
+    "CalotTriangleDissection -> GallbladderDissection": 80,
+    "ClippingCutting -> GallbladderPackaging": 80,
+    "GallbladderDissection -> CleaningCoagulation": 74,
+    "GallbladderPackaging -> GallbladderRetraction": 73,
+    "Preparation -> ClippingCutting": 71
+  },
+  "question_types": [
+    "missing_milestone_identification"
+  ],
+  "num_choices": 4,
+  "max_triples_per_video": 0,
+  "question_template": "[Task]\nYou are solving a surgical video procedure understanding task.\n\nIn this task, you must {task_background_and_goal_description}\n\nReference surgical phase order with brief meanings:\n1. Preparation - establish access and initial exposure.\n2. Calot triangle dissection - dissect Calot's triangle to expose the cystic duct and cystic artery.\n3. Clipping and cutting - clip and divide the cystic duct and/or cystic artery structures.\n4. Gallbladder dissection - detach the gallbladder from the liver bed.\n5. Gallbladder packaging - place the detached gallbladder specimen into a retrieval bag.\n6. Cleaning/coagulation - irrigate, aspirate, clean the operative field, and/or control bleeding.\n7. Gallbladder retraction - final retraction or removal of the packaged gallbladder.\n\nYou will receive one or more clips. Frames inside each clip are chronological. Use the temporal progression across frames to identify the procedural step.\n\nThe visual evidence for this question is provided below.\n{images}\n\n[Rules]\n1. Use only the images and text provided in this prompt.\n2. If answer options are provided, choose only from the provided options.\n3. Do not output explanation beyond the required final answer.\n\n[Question]\n{full_question_text}\n\n[Answer Format]\nOutput exactly one JSON object: {\"answer_label\":\"{ans}\"} and nothing else.\nReplace {ans} with the single legal answer for this task, chosen from {legal_answer_space_description}.",
+  "images_placeholder": "{images}",
+  "task_background_and_goal": "diagnose missing procedural milestones between surgical video clips.",
+  "missing_question": "What key milestone is missing between these two clips?",
+  "phase_order": [
+    "Preparation",
+    "CalotTriangleDissection",
+    "ClippingCutting",
+    "GallbladderDissection",
+    "GallbladderPackaging",
+    "CleaningCoagulation",
+    "GallbladderRetraction"
+  ],
+  "phase_display": {
+    "Preparation": "Preparation",
+    "CalotTriangleDissection": "Calot triangle dissection",
+    "ClippingCutting": "Clipping and cutting",
+    "GallbladderDissection": "Gallbladder dissection",
+    "GallbladderPackaging": "Gallbladder packaging",
+    "CleaningCoagulation": "Cleaning/coagulation",
+    "GallbladderRetraction": "Gallbladder retraction"
+  },
+  "smoke_data": true,
+  "smoke_source_dataset": "Cholec80",
+  "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/B2/manifest.jsonl",
+  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 378,
+  "smoke_original_source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl"
+}
