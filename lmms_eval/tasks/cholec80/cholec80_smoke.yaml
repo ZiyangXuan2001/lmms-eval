@@ -1,0 +1,6 @@
+task: cholec80_smoke
+dataset_kwargs:
+  data_files:
+    test: smoke_data/cholec80/data/manifest.jsonl
+
+include: _default_template_yaml
