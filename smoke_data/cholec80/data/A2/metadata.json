@@ -2,7 +2,7 @@
   "task": "A2_order_understanding",
   "dataset": "Cholec80",
   "source_a1_manifest": "smoke_data/cholec80/data/A1/manifest.jsonl",
-  "num_samples": 1,
+  "num_samples": 10,
   "question_type_counts": {
     "out_of_order_step_correction": 378
   },
@@ -56,7 +56,7 @@
   "smoke_data": true,
   "smoke_source_dataset": "Cholec80",
   "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/A2/manifest.jsonl",
-  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
   "smoke_original_num_samples": 378,
   "smoke_original_source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl"
 }

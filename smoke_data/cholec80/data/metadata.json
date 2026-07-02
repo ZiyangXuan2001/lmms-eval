@@ -1,7 +1,7 @@
 {
   "dataset": "Cholec80",
   "smoke_data": true,
-  "num_samples": 8,
+  "num_samples": 35,
   "source_task_dirs": [
     "A1",
     "A2",
@@ -23,5 +23,5 @@
     "smoke_data/cholec80/data/C1/manifest.jsonl"
   ],
   "frames_root": "smoke_data/cholec80/frames",
-  "notes": "Combined smoke manifest for end-to-end lmms-eval wiring. Rows are copied unchanged from per-task smoke manifests; frames remain stored separately under frames_root."
+  "notes": "Combined smoke manifest for end-to-end lmms-eval wiring. A1, A2, and A3 contain 10 records each; other task families keep one record. Frames remain stored separately under frames_root."
 }

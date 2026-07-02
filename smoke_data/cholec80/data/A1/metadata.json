@@ -1,7 +1,7 @@
 {
   "task": "A1_step_recognition",
   "dataset": "Cholec80",
-  "num_samples": 1,
+  "num_samples": 10,
   "phase_counts": {
     "CalotTriangleDissection": 80,
     "CleaningCoagulation": 74,
@@ -29,6 +29,6 @@
   "smoke_data": true,
   "smoke_source_dataset": "Cholec80",
   "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl",
-  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
   "smoke_original_num_samples": 544
 }

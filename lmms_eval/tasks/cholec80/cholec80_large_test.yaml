@@ -1,0 +1,6 @@
+task: cholec80_large_test
+dataset_kwargs:
+  data_files:
+    test: data/cholec80_large_test/manifest.jsonl
+
+include: _default_template_yaml

@@ -2,7 +2,7 @@
   "dataset": "Cholec80",
   "smoke_data": true,
   "source_data_root": "/data/shared/benchmark/cholec80/data",
-  "selection": "first record from each generated task manifest",
+  "selection": "first 10 records for A1/A2/A3; first record for B1/B2/B3/B4/C1",
   "task_dirs": [
     "A1",
     "A2",
@@ -13,10 +13,11 @@
     "B4",
     "C1"
   ],
-  "num_manifest_records": 8,
-  "num_unique_thumbnail_frames": 35,
+  "num_manifest_records": 35,
+  "num_unique_thumbnail_frames": 123,
   "thumbnail_geometry": "160x90 JPEG",
   "video_ids": [
-    "video01"
+    "video01",
+    "video02"
   ]
 }
