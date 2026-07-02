@@ -1,8 +1,11 @@
 {
-  "dataset": "Cholec80",
+  "dataset": "Cholec80+CholecT50",
   "smoke_data": true,
-  "source_data_root": "/data/shared/benchmark/cholec80/data",
-  "selection": "first 10 records for A1/A2/A3; first record for B1/B2/B3/B4/C1",
+  "source_data_roots": {
+    "Cholec80": "/data/shared/benchmark/cholec80/data",
+    "CholecT50": "/data/shared/benchmark/CholecT50/data"
+  },
+  "selection": "10 records per task family; D2 uses the first 10 CholecT50-sourced records.",
   "task_dirs": [
     "A1",
     "A2",
@@ -11,12 +14,22 @@
     "B2",
     "B3",
     "B4",
-    "C1"
+    "C1",
+    "C2",
+    "C3",
+    "D1",
+    "D2"
   ],
-  "num_manifest_records": 35,
-  "num_unique_thumbnail_frames": 123,
+  "num_manifest_records": 120,
+  "num_unique_thumbnail_frames": 251,
   "thumbnail_geometry": "160x90 JPEG",
+  "datasets": [
+    "Cholec80",
+    "Cholec80+CholecT50",
+    "CholecT50"
+  ],
   "video_ids": [
+    "VID01",
     "video01",
     "video02"
   ]

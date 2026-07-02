@@ -1,7 +1,7 @@
 {
-  "dataset": "Cholec80",
+  "dataset": "Cholec80+CholecT50",
   "smoke_data": true,
-  "num_samples": 35,
+  "num_samples": 120,
   "source_task_dirs": [
     "A1",
     "A2",
@@ -10,7 +10,11 @@
     "B2",
     "B3",
     "B4",
-    "C1"
+    "C1",
+    "C2",
+    "C3",
+    "D1",
+    "D2"
   ],
   "source_manifests": [
     "smoke_data/cholec80/data/A1/manifest.jsonl",
@@ -20,8 +24,12 @@
     "smoke_data/cholec80/data/B2/manifest.jsonl",
     "smoke_data/cholec80/data/B3/manifest.jsonl",
     "smoke_data/cholec80/data/B4/manifest.jsonl",
-    "smoke_data/cholec80/data/C1/manifest.jsonl"
+    "smoke_data/cholec80/data/C1/manifest.jsonl",
+    "smoke_data/cholec80/data/C2/manifest.jsonl",
+    "smoke_data/cholec80/data/C3/manifest.jsonl",
+    "smoke_data/cholec80/data/D1/manifest.jsonl",
+    "smoke_data/cholec80/data/D2/manifest.jsonl"
   ],
   "frames_root": "smoke_data/cholec80/frames",
-  "notes": "Combined smoke manifest for end-to-end lmms-eval wiring. A1, A2, and A3 contain 10 records each; other task families keep one record. Frames remain stored separately under frames_root."
+  "notes": "Combined smoke manifest for end-to-end lmms-eval wiring. Cholec80 A1-C1 and shared CholecT50 C2-D2 task families contain 10 records each."
 }

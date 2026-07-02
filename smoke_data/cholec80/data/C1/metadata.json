@@ -1,9 +1,9 @@
 {
   "task": "C1_procedure_state_tracking",
   "dataset": "Cholec80",
-  "source_phase_annotations": "smoke_data/cholec80/phase_annotations",
-  "source_tool_annotations": "smoke_data/cholec80/tool_annotations",
-  "num_samples": 1,
+  "source_phase_annotations": "/data/shared/benchmark/cholec80/cholec80/phase_annotations",
+  "source_tool_annotations": "/data/shared/benchmark/cholec80/cholec80/tool_annotations",
+  "num_samples": 10,
   "num_clips": 1088,
   "num_clip_pairs": 999,
   "question_type_counts": {
@@ -112,8 +112,7 @@
   "smoke_data": true,
   "smoke_source_dataset": "Cholec80",
   "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/C1/manifest.jsonl",
-  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
   "smoke_original_num_samples": 999,
-  "smoke_original_source_phase_annotations": "/data/shared/benchmark/cholec80/cholec80/phase_annotations",
-  "smoke_original_source_tool_annotations": "/data/shared/benchmark/cholec80/cholec80/tool_annotations"
+  "smoke_source_kind": "cholec80"
 }

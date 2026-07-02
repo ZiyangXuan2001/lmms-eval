@@ -1,0 +1,64 @@
+{
+  "task": "D1_hierarchical_procedure_consistency",
+  "dataset": "CholecT50",
+  "source_labels": "/data/shared/benchmark/CholecT50/labels",
+  "source_videos": "/data/shared/benchmark/CholecT50/videos",
+  "source_label_mapping": "/data/shared/benchmark/CholecT50/label_mapping.txt",
+  "num_samples": 10,
+  "question_type_counts": {
+    "cross_level_consistency_verification": 1990
+  },
+  "label_counts": {
+    "Consistent": 995,
+    "Inconsistent": 995
+  },
+  "answer_label_counts": {
+    "A": 995,
+    "B": 995
+  },
+  "phase_counts": {
+    "carlot-triangle-dissection": 566,
+    "cleaning-and-coagulation": 236,
+    "clipping-and-cutting": 254,
+    "gallbladder-dissection": 464,
+    "gallbladder-extraction": 136,
+    "gallbladder-packaging": 198,
+    "preparation": 136
+  },
+  "claimed_action_source_counts": {
+    "cross_phase_triplet": 995,
+    "observed_clip_triplet": 995
+  },
+  "mismatch_type_counts": {
+    "None": 995,
+    "phase_action_hierarchy_mismatch": 995
+  },
+  "question_types": [
+    "cross_level_consistency_verification"
+  ],
+  "frames_per_clip": 8,
+  "window_stride": 8,
+  "clips_per_phase_triplet_per_video": 1,
+  "max_clips_per_video": 0,
+  "min_frames_with_action": 4,
+  "min_dominant_triplet_frames": 3,
+  "storage": "paths",
+  "cross_level_question_template": "Claimed lower-level action: {action}.\nIs this action hierarchically consistent with the procedural phase shown in the clip?",
+  "consistency_choices": [
+    {
+      "label": "A",
+      "text": "Consistent"
+    },
+    {
+      "label": "B",
+      "text": "Inconsistent"
+    }
+  ],
+  "phase_is_visual_only": true,
+  "smoke_data": true,
+  "smoke_source_dataset": "CholecT50",
+  "smoke_source_manifest": "/data/shared/benchmark/CholecT50/data/D1/manifest.jsonl",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 1990,
+  "smoke_source_kind": "cholect50_shared"
+}

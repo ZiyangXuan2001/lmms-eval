@@ -1,0 +1,163 @@
+{
+  "task": "C3_tool_action_target_consistency",
+  "dataset": "CholecT50",
+  "source_labels": "/data/shared/benchmark/CholecT50/labels",
+  "source_videos": "/data/shared/benchmark/CholecT50/videos",
+  "source_label_mapping": "/data/shared/benchmark/CholecT50/label_mapping.txt",
+  "num_samples": 10,
+  "question_type_counts": {
+    "tool_action_target_mcq": 637,
+    "triplet_consistency_verification": 1274
+  },
+  "label_counts_by_question_type": {
+    "tool_action_target_mcq": {
+      "bipolar coagulates abdominal wall cavity": 12,
+      "bipolar coagulates blood vessel": 6,
+      "bipolar coagulates cystic artery": 2,
+      "bipolar coagulates cystic pedicle": 3,
+      "bipolar coagulates cystic plate": 5,
+      "bipolar coagulates gallbladder": 7,
+      "bipolar coagulates liver": 18,
+      "bipolar coagulates omentum": 2,
+      "bipolar dissects adhesion": 1,
+      "bipolar dissects cystic artery": 2,
+      "bipolar dissects cystic duct": 2,
+      "bipolar dissects cystic plate": 2,
+      "bipolar dissects gallbladder": 2,
+      "bipolar dissects omentum": 1,
+      "bipolar grasps liver": 1,
+      "bipolar grasps specimen bag": 2,
+      "bipolar retracts cystic pedicle": 1,
+      "bipolar retracts gallbladder": 1,
+      "bipolar retracts liver": 2,
+      "bipolar retracts omentum": 1,
+      "clipper clips blood vessel": 1,
+      "clipper clips cystic artery": 14,
+      "clipper clips cystic duct": 21,
+      "grasper dissects cystic plate": 2,
+      "grasper dissects gallbladder": 6,
+      "grasper dissects omentum": 1,
+      "grasper grasps cystic artery": 2,
+      "grasper grasps cystic duct": 12,
+      "grasper grasps cystic pedicle": 1,
+      "grasper grasps cystic plate": 3,
+      "grasper grasps gallbladder": 43,
+      "grasper grasps gut": 1,
+      "grasper grasps liver": 2,
+      "grasper grasps omentum": 4,
+      "grasper grasps peritoneum": 5,
+      "grasper grasps specimen bag": 46,
+      "grasper packs gallbladder": 5,
+      "grasper retracts cystic duct": 1,
+      "grasper retracts cystic pedicle": 2,
+      "grasper retracts cystic plate": 7,
+      "grasper retracts gallbladder": 47,
+      "grasper retracts gut": 12,
+      "grasper retracts liver": 46,
+      "grasper retracts omentum": 21,
+      "grasper retracts peritoneum": 8,
+      "hook coagulates blood vessel": 2,
+      "hook coagulates cystic artery": 1,
+      "hook coagulates cystic pedicle": 1,
+      "hook coagulates gallbladder": 10,
+      "hook coagulates liver": 10,
+      "hook coagulates omentum": 1,
+      "hook dissects cystic artery": 17,
+      "hook dissects cystic duct": 38,
+      "hook dissects cystic plate": 11,
+      "hook dissects gallbladder": 46,
+      "hook dissects omentum": 14,
+      "hook dissects peritoneum": 10,
+      "hook retracts gallbladder": 7,
+      "hook retracts liver": 4,
+      "irrigator aspirates fluid": 29,
+      "irrigator dissects cystic plate": 1,
+      "irrigator dissects omentum": 1,
+      "irrigator irrigates abdominal wall cavity": 7,
+      "irrigator irrigates cystic pedicle": 1,
+      "irrigator irrigates liver": 1,
+      "irrigator retracts liver": 6,
+      "irrigator retracts omentum": 1,
+      "scissors cuts adhesion": 1,
+      "scissors cuts cystic artery": 10,
+      "scissors cuts cystic duct": 16,
+      "scissors cuts cystic plate": 1,
+      "scissors cuts omentum": 1,
+      "scissors cuts peritoneum": 1,
+      "scissors dissects gallbladder": 1,
+      "scissors dissects omentum": 1
+    },
+    "triplet_consistency_verification": {
+      "No": 637,
+      "Yes": 637
+    }
+  },
+  "answer_label_counts_by_question_type": {
+    "tool_action_target_mcq": {
+      "A": 162,
+      "B": 159,
+      "C": 149,
+      "D": 167
+    },
+    "triplet_consistency_verification": {
+      "A": 637,
+      "B": 637
+    }
+  },
+  "phase_counts_by_question_type": {
+    "tool_action_target_mcq": {
+      "carlot-triangle-dissection": 236,
+      "cleaning-and-coagulation": 56,
+      "clipping-and-cutting": 74,
+      "gallbladder-dissection": 119,
+      "gallbladder-extraction": 15,
+      "gallbladder-packaging": 68,
+      "preparation": 69
+    },
+    "triplet_consistency_verification": {
+      "carlot-triangle-dissection": 472,
+      "cleaning-and-coagulation": 112,
+      "clipping-and-cutting": 148,
+      "gallbladder-dissection": 238,
+      "gallbladder-extraction": 30,
+      "gallbladder-packaging": 136,
+      "preparation": 138
+    }
+  },
+  "claimed_triplet_source_counts_by_question_type": {
+    "triplet_consistency_verification": {
+      "distractor_triplet": 637,
+      "observed_clip_triplet": 637
+    }
+  },
+  "question_types": [
+    "tool_action_target_mcq",
+    "triplet_consistency_verification"
+  ],
+  "frames_per_clip": 8,
+  "window_stride": 8,
+  "clips_per_triplet_per_video": 1,
+  "max_clips_per_video": 0,
+  "min_frames_with_triplet": 4,
+  "min_dominant_triplet_frames": 3,
+  "num_mcq_choices": 4,
+  "storage": "paths",
+  "mcq_question": "Which tool-action-target statement matches the clip?",
+  "verification_question_template": "Claimed triplet: {triplet}.\nDoes this tool-action-target triplet match the clip?",
+  "yes_no_choices": [
+    {
+      "label": "A",
+      "text": "Yes"
+    },
+    {
+      "label": "B",
+      "text": "No"
+    }
+  ],
+  "smoke_data": true,
+  "smoke_source_dataset": "CholecT50",
+  "smoke_source_manifest": "/data/shared/benchmark/CholecT50/data/C3/manifest.jsonl",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 1911,
+  "smoke_source_kind": "cholect50_shared"
+}

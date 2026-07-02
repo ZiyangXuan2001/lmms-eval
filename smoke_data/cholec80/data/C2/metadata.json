@@ -1,0 +1,113 @@
+{
+  "task": "C2_action_state_consistency",
+  "dataset": "CholecT50",
+  "source_labels": "/data/shared/benchmark/CholecT50/labels",
+  "source_videos": "/data/shared/benchmark/CholecT50/videos",
+  "source_label_mapping": "/data/shared/benchmark/CholecT50/label_mapping.txt",
+  "num_samples": 10,
+  "question_type_counts": {
+    "phase_action_consistency": 1990,
+    "state_action_mismatch_detection": 1990
+  },
+  "label_counts_by_question_type": {
+    "phase_action_consistency": {
+      "No": 995,
+      "Yes": 995
+    },
+    "state_action_mismatch_detection": {
+      "The claimed action belongs to a different procedure state than the one shown.": 995,
+      "The claimed action is consistent with the procedure state shown.": 995
+    }
+  },
+  "phase_counts_by_question_type": {
+    "phase_action_consistency": {
+      "carlot-triangle-dissection": 566,
+      "cleaning-and-coagulation": 236,
+      "clipping-and-cutting": 254,
+      "gallbladder-dissection": 464,
+      "gallbladder-extraction": 136,
+      "gallbladder-packaging": 198,
+      "preparation": 136
+    },
+    "state_action_mismatch_detection": {
+      "carlot-triangle-dissection": 566,
+      "cleaning-and-coagulation": 236,
+      "clipping-and-cutting": 254,
+      "gallbladder-dissection": 464,
+      "gallbladder-extraction": 136,
+      "gallbladder-packaging": 198,
+      "preparation": 136
+    }
+  },
+  "claimed_action_source_counts_by_question_type": {
+    "phase_action_consistency": {
+      "mismatched_triplet": 995,
+      "observed_clip_triplet": 995
+    },
+    "state_action_mismatch_detection": {
+      "mismatched_triplet": 995,
+      "observed_clip_triplet": 995
+    }
+  },
+  "mismatch_type_counts_by_question_type": {
+    "phase_action_consistency": {
+      "None": 995,
+      "phase_action_mismatch": 995
+    },
+    "state_action_mismatch_detection": {
+      "None": 995,
+      "phase_action_mismatch": 995
+    }
+  },
+  "question_types": [
+    "phase_action_consistency",
+    "state_action_mismatch_detection"
+  ],
+  "frames_per_clip": 8,
+  "window_stride": 8,
+  "clips_per_phase_triplet_per_video": 1,
+  "max_clips_per_video": 0,
+  "min_frames_with_action": 4,
+  "min_dominant_triplet_frames": 3,
+  "storage": "paths",
+  "phase_action_question_template": "Claimed action: {action}.\nIs this action consistent with the procedural state shown in the clip?",
+  "state_action_mismatch_question_template": "Claimed action: {action}.\nWhat best describes this claimed action relative to the procedural state shown in the clip?",
+  "yes_no_choices": [
+    {
+      "label": "A",
+      "text": "Yes"
+    },
+    {
+      "label": "B",
+      "text": "No"
+    }
+  ],
+  "mismatch_choices": [
+    {
+      "label": "A",
+      "text": "The claimed action is consistent with the procedure state shown.",
+      "mismatch_type": "none"
+    },
+    {
+      "label": "B",
+      "text": "The claimed action belongs to a different procedure state than the one shown.",
+      "mismatch_type": "phase_action_mismatch"
+    },
+    {
+      "label": "C",
+      "text": "No relevant surgical action is visible in the clip.",
+      "mismatch_type": "no_relevant_action_visible"
+    },
+    {
+      "label": "D",
+      "text": "The clip does not show an endoscopic surgical scene.",
+      "mismatch_type": "non_surgical_scene"
+    }
+  ],
+  "smoke_data": true,
+  "smoke_source_dataset": "CholecT50",
+  "smoke_source_manifest": "/data/shared/benchmark/CholecT50/data/C2/manifest.jsonl",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 3980,
+  "smoke_source_kind": "cholect50_shared"
+}

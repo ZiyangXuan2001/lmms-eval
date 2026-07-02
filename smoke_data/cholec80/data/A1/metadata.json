@@ -30,5 +30,6 @@
   "smoke_source_dataset": "Cholec80",
   "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl",
   "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
-  "smoke_original_num_samples": 544
+  "smoke_original_num_samples": 544,
+  "smoke_source_kind": "cholec80"
 }

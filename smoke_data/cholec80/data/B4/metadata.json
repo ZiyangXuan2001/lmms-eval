@@ -1,8 +1,8 @@
 {
   "task": "B4_premature_progression_detection",
   "dataset": "Cholec80",
-  "source_a1_manifest": "smoke_data/cholec80/data/A1/manifest.jsonl",
-  "num_samples": 1,
+  "source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl",
+  "num_samples": 10,
   "question_type_counts": {
     "premature_progression_detection": 756
   },
@@ -81,7 +81,7 @@
   "smoke_data": true,
   "smoke_source_dataset": "Cholec80",
   "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/B4/manifest.jsonl",
-  "smoke_selection": "First JSONL record from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
   "smoke_original_num_samples": 756,
-  "smoke_original_source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl"
+  "smoke_source_kind": "cholec80"
 }

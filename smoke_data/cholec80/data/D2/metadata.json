@@ -1,0 +1,132 @@
+{
+  "task": "D2_deviation_type_classification",
+  "dataset": "Cholec80+CholecT50",
+  "num_samples": 10,
+  "question_type_counts": {
+    "counterfactual_audit_qa": 2256,
+    "deviation_type_classification": 2256,
+    "procedural_error_diagnosis": 2256
+  },
+  "deviation_type_counts": {
+    "invalid_transition": 1128,
+    "out_of_order_step": 1128,
+    "phase_action_mismatch": 1128,
+    "premature_progression": 1128,
+    "skipped_milestone": 1128,
+    "tool_action_target_mismatch": 1128
+  },
+  "source_dataset_counts": {
+    "Cholec80": 4512,
+    "CholecT50": 2256
+  },
+  "source_task_counts": {
+    "A2_order_understanding": 1128,
+    "A3_transition_validity": 1128,
+    "B2_missing_milestone_diagnosis": 1128,
+    "B4_premature_progression_detection": 1128,
+    "C2_action_state_consistency": 1128,
+    "C3_tool_action_target_consistency": 1128
+  },
+  "answer_label_counts_by_question_type": {
+    "counterfactual_audit_qa": {
+      "A": 373,
+      "B": 375,
+      "C": 372,
+      "D": 366,
+      "E": 392,
+      "F": 378
+    },
+    "deviation_type_classification": {
+      "A": 387,
+      "B": 362,
+      "C": 357,
+      "D": 325,
+      "E": 395,
+      "F": 430
+    },
+    "procedural_error_diagnosis": {
+      "A": 383,
+      "B": 366,
+      "C": 387,
+      "D": 400,
+      "E": 371,
+      "F": 349
+    }
+  },
+  "deviation_type_counts_by_question_type": {
+    "counterfactual_audit_qa": {
+      "invalid_transition": 376,
+      "out_of_order_step": 376,
+      "phase_action_mismatch": 376,
+      "premature_progression": 376,
+      "skipped_milestone": 376,
+      "tool_action_target_mismatch": 376
+    },
+    "deviation_type_classification": {
+      "invalid_transition": 376,
+      "out_of_order_step": 376,
+      "phase_action_mismatch": 376,
+      "premature_progression": 376,
+      "skipped_milestone": 376,
+      "tool_action_target_mismatch": 376
+    },
+    "procedural_error_diagnosis": {
+      "invalid_transition": 376,
+      "out_of_order_step": 376,
+      "phase_action_mismatch": 376,
+      "premature_progression": 376,
+      "skipped_milestone": 376,
+      "tool_action_target_mismatch": 376
+    }
+  },
+  "question_types": [
+    "counterfactual_audit_qa",
+    "deviation_type_classification",
+    "procedural_error_diagnosis"
+  ],
+  "deviation_categories": [
+    {
+      "deviation_type": "skipped_milestone",
+      "display": "Skipped milestone"
+    },
+    {
+      "deviation_type": "out_of_order_step",
+      "display": "Out-of-order step"
+    },
+    {
+      "deviation_type": "invalid_transition",
+      "display": "Invalid transition"
+    },
+    {
+      "deviation_type": "premature_progression",
+      "display": "Premature progression"
+    },
+    {
+      "deviation_type": "phase_action_mismatch",
+      "display": "Phase-action mismatch"
+    },
+    {
+      "deviation_type": "tool_action_target_mismatch",
+      "display": "Tool-action-target mismatch"
+    }
+  ],
+  "source_manifests": {
+    "cholec80_a2": "/data/shared/benchmark/cholec80/data/A2/manifest.jsonl",
+    "cholec80_a3": "/data/shared/benchmark/cholec80/data/A3/manifest.jsonl",
+    "cholec80_b2": "/data/shared/benchmark/cholec80/data/B2/manifest.jsonl",
+    "cholec80_b4": "/data/shared/benchmark/cholec80/data/B4/manifest.jsonl",
+    "cholect50_c2": "/data/shared/benchmark/CholecT50/data/C2/manifest.jsonl",
+    "cholect50_c3": "/data/shared/benchmark/CholecT50/data/C3/manifest.jsonl"
+  },
+  "max_events_per_category": 376,
+  "storage": "paths",
+  "classification_question": "What type of procedural deviation is present in the shown evidence?",
+  "diagnosis_question": "Which diagnosis best explains the procedural error in the shown evidence?",
+  "counterfactual_question": "If this audited clip order or claimed label were accepted as the procedure record, what deviation would it introduce?",
+  "smoke_data": true,
+  "smoke_source_dataset": "Cholec80+CholecT50",
+  "smoke_source_manifest": "/data/shared/benchmark/CholecT50/data/D2/manifest.jsonl",
+  "smoke_selection": "First 10 CholecT50-sourced JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
+  "smoke_original_num_samples": 6768,
+  "smoke_source_kind": "cholect50_shared"
+}

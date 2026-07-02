@@ -1,7 +1,7 @@
 {
   "task": "A3_transition_validity",
   "dataset": "Cholec80",
-  "source_a1_manifest": "smoke_data/cholec80/data/A1/manifest.jsonl",
+  "source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl",
   "num_samples": 10,
   "question_type_counts": {
     "invalid_transition_detection": 836
@@ -69,5 +69,5 @@
   "smoke_source_manifest": "/data/shared/benchmark/cholec80/data/A3/manifest.jsonl",
   "smoke_selection": "First 10 JSONL records from this task manifest; media resized to 160x90 JPEG thumbnails.",
   "smoke_original_num_samples": 836,
-  "smoke_original_source_a1_manifest": "/data/shared/benchmark/cholec80/data/A1/manifest.jsonl"
+  "smoke_source_kind": "cholec80"
 }
